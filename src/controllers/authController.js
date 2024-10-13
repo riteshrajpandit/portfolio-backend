@@ -7,11 +7,18 @@ exports.register = async (req, res) => {
   try {
     const { username, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create({ username, password: hashedPassword });
+    // const user = await User.save().then((result));
+    // const user = {username, password: hashedPassword};
+    // user.save().then(result=>result);
+
+    const user = new User({ username, password: hashedPassword });
+    await user.save();  // Save the user to MongoDB
+
     res.status(201).json({ message: "User created successfully" });
     return user;
   } catch (error) {
     res.status(500).json({ error: error.message });
+    console.log(error);
   }
 };
 

@@ -25,6 +25,11 @@ app.use("/api/blog", blogRoutes);
 
 const PORT = process.env.PORT || 3000;
 
+
 app.get("/", (req, res) => {
   return res.status(200).send("Welcome to the E-healthcare backend");
 });
+
+app.listen((PORT),()=>{
+  console.log(`Server running on port ${PORT}`)
+})
