@@ -18,6 +18,8 @@
     "express": "^4.21.1",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.1",
     "pg": "^8.13.0",
     "sequelize": "^6.37.4"
   },
